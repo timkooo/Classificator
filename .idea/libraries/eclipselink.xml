@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="eclipselink">
+    <CLASSES>
+      <root url="jar://D:/Drivers/JPA/EclipseLink/eclipselink.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ClassificatorClient">
+    <output-path>$PROJECT_DIR$/out/artifacts/ClassificatorClient</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ClassificatorClient/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ClassificatorClient" />
+          <element id="module-output" name="ClassificatorServer" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Mojarra-2.2.1" />
+          <element id="library" level="project" name="ejb-3.2" />
+          <element id="library" level="project" name="JPA 2.0-2.0" />
+          <element id="library" level="project" name="eclipselink" />
+          <element id="library" level="project" name="JBoss Weld-2.0.3" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="ClassificatorServer/ejb/EJB" />
+    </root>
+  </artifact>
+</component>

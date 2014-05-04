@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <link href="../resources/css/main.css" rel="stylesheet" type="text/css"/>
+</h:head>
+<h:body>
+    <div id="full_page" class="b3radius">
+        <div id="header">
+            <h1>Сейчас в корзине #{cartBean.cartSize}</h1>
+            <h:form>
+                <h:panelGrid columns="4">
+                    <h:commandButton value="Logout" action="#{loginBean.doLogout}"
+                                     rendered="#{loginBean.isLoggedIn()}"/>
+                    <h:inputText value="#{loginBean.login}" rendered="#{not loginBean.isLoggedIn()}"/>
+                    <h:inputText value="#{loginBean.password}" rendered="#{not loginBean.isLoggedIn()}"/>
+                    <h:commandButton value="Login" action="#{loginBean.doLogin}"
+                                     rendered="#{not loginBean.isLoggedIn()}"/>
+                </h:panelGrid>
+            </h:form>
+        </div>
+        <div id="wrapper" class="container">
+            <div id="leftbar" class="column2">
+                <h:form>
+                    <h:commandLink action="/pages/private/admin/adminanimals" value="Show All Recruiter Items"/>
+                </h:form>
+            </div>
+            <div id="data" class="column">
+                <h:panelGroup>
+                <h:dataTable value="#{animalMBean.animalList}" var="animal">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="ID"/>
+                        </f:facet>
+                        <h:outputText value="#{animal.animalName}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Name"/>
+                        </f:facet>
+                        <h:outputText value="#{animal.animalAge}"/>
+                    </h:column>
+                </h:dataTable>
+                <h:form>
+                    <h:commandButton action="#{animalCartMBean.removeAllFromCart()}" value="Удалить все из корзины"/>
+                </h:form>
+                </h:panelGroup>
+            </div>
+        </div>
+        <div class="clr"></div>
+    </div>
+</h:body>
+</html>

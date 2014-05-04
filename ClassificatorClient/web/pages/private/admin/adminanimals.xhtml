@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <!--  <title>Simple JSF Facelets page</title>-->
+</h:head>
+
+<h:body>
+    <h:form> <h:panelGrid columns="2">
+        <h:commandLink action="/pages/home" value="Вернуться на главную"/>
+        <h:commandLink action="/pages/cart" value="Перейти в корзину: #{animalCartMBean.cartSize}"/>
+    </h:panelGrid>
+    </h:form>
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:outputText value="имя животного"/><h:inputText value="#{animalMBean.animal.animalName}"/>
+            <h:outputText value="возраст животного"/><h:inputText value="#{animalMBean.animal.animalAge}"/>
+            <h:commandButton value="Добавить" action="#{animalMBean.addNewAnimal()}"/>
+            <h:commandButton value="Удалить всех" action="#{animalMBean.removeAllAnimals()}"/>
+        </h:panelGrid>
+    </h:form>
+
+    <h:form>
+        <h:dataTable value="#{animalMBean.animalList}" var="animal">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Имя животного"/>
+                </f:facet>
+                <h:outputText value="#{animal.animalName}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Возраст животного"/>
+                </f:facet>
+                <h:outputText value="#{animal.animalAge}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Select"/>
+                </f:facet>
+                <h:selectBooleanCheckbox value="#{animalMBean.selected[animal.animalId]}"/>
+            </h:column>
+
+
+        </h:dataTable>
+        <h:panelGrid columns="3">
+            <h:commandButton action="#{animalMBean.moveToCart()}" value="Добавить в корзину"/>
+            <h:commandButton action="#{animalMBean.deleteSelected()}" value="Удалить"/>
+        </h:panelGrid>
+    </h:form>
+</h:body>
+
+</html>

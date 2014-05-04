@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="NewPersistenceUnit">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>main.entity.AnimalsEntity</class>
+        <class>main.entity.UsersEntity</class>
+        <class>main.entity.CartsEntity</class>
+        <class>main.entity.OrdersEntity</class>
+        <class>main.entity.SessionsEntity</class>
+        <class>main.entity.AnimalsOrdersEntity</class>
+        <class>main.entity.CartsAnimalsEntity</class>
+        <properties>
+           <!-- <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="javax.persistence.jdbc.url"    value="jdbc:postgresql://localhost:5432/ebank" />
+            <property name="javax.persistence.jdbc.user" value="postgres" />
+            <property name="javax.persistence.jdbc.password" value="321456" />
+            <property name="eclipselink.ddl-generation" value="create-tables" />
+            <property name="eclipselink.ddl-generation.output-mode" value="database" />-->
+            <property name="eclipselink.jdbc.url" value="jdbc:postgresql://localhost:5432/ebank"/>
+            <property name="eclipselink.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="eclipselink.jdbc.user" value="postgres"/>
+            <property name="eclipselink.jdbc.password" value="321456"/>
+        </properties>
+    </persistence-unit>
+</persistence>

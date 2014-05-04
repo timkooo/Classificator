@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ejb" name="ClassificatorServer">
+    <output-path>$PROJECT_DIR$/out/artifacts/ClassificatorServer</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ClassificatorServer/ejb/EJB" />
+      <element id="module-output" name="ClassificatorServer" />
+    </root>
+  </artifact>
+</component>
